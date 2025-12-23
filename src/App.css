@@ -80,6 +80,17 @@
   backdrop-filter: blur(5px);
 }
 
+.new-button {
+  margin-left: 1em;
+  background-color: #646cff;
+  color: white;
+}
+
+.new-button:hover {
+  background-color: #535bf2;
+  border-color: #646cff;
+}
+
 .read-the-docs {
   color: #888;
 }

@@ -19,7 +19,10 @@ function App() {
             <button onClick={() => setCount((count) => count + 1)}>
               count is {count}
             </button>
-            <p>
+            <button className="new-button" onClick={() => alert('新按钮被点击了！')}>
+            新按钮
+          </button>
+          <p>
               Edit <code>src/App.jsx</code> and save to test HMR
             </p>
           </div>
