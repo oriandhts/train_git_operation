@@ -45,28 +45,30 @@ function App() {
 
   return (
     <>
-      <div>
-        <h1>React + Vite</h1>
-        
-        {/* Tab 切换按钮 */}
-        <div className="tab-container">
-          {tabs.map((tab) => (
-            <button
-              key={tab.id}
-              className={`tab-button ${activeTab === tab.id ? 'active' : ''}`}
-              onClick={() => setActiveTab(tab.id)}
-            >
-              {tab.label}
-            </button>
-          ))}
+      <div className="app-container">
+        <div className="app-content">
+          <h1>React + Vite</h1>
+          
+          {/* Tab 切换按钮 */}
+          <div className="tab-container">
+            {tabs.map((tab) => (
+              <button
+                key={tab.id}
+                className={`tab-button ${activeTab === tab.id ? 'active' : ''}`}
+                onClick={() => setActiveTab(tab.id)}
+              >
+                {tab.label}
+              </button>
+            ))}
+          </div>
+
+          {/* Tab 内容 */}
+          {renderTabContent()}
+
+          <p className="read-the-docs">
+            Click on the Vite and React logos to learn more
+          </p>
         </div>
-
-        {/* Tab 内容 */}
-        {renderTabContent()}
-
-        <p className="read-the-docs">
-          Click on the Vite and React logos to learn more
-        </p>
       </div>
     </>
   )
