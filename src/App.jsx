@@ -3,42 +3,55 @@ import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
-  const [activeTab, setActiveTab] = useState('tab1')
+  const [activeTab, setActiveTab] = useState('home')
 
   const tabs = [
-    { id: 'tab1', label: '首页' },
-    { id: 'tab2', label: '关于' },
-    { id: 'tab3', label: '联系' }
+    { id: 'home', label: '首页' },
+    { id: 'about', label: '关于' },
+    { id: 'contact', label: '联系' },
+    { id: 'weather', label: '天气' }
   ]
 
   const renderTabContent = () => {
     switch (activeTab) {
-      case 'tab1':
+      case 'home':
         return (
           <div className="card">
             <button onClick={() => setCount((count) => count + 1)}>
               count is {count}
             </button>
             <button className="new-button" onClick={() => alert('新按钮被点击了！')}>
-            新按钮
-          </button>
-          <p>
+              新按钮
+            </button>
+            <p>
               Edit <code>src/App.jsx</code> and save to test HMR
             </p>
           </div>
         )
-      case 'tab2':
+      case 'about':
         return (
           <div className="card">
             <h2>关于我们</h2>
             <p>这是一个使用 React + Vite 构建的应用</p>
           </div>
         )
-      case 'tab3':
+      case 'contact':
         return (
           <div className="card">
             <h2>联系我们</h2>
             <p>欢迎通过以下方式联系我们</p>
+          </div>
+        )
+      case 'weather':
+        return (
+          <div className="card">
+            <h2>天气信息</h2>
+            <p>这里可以显示天气信息</p>
+            <div className="weather-info">
+              <p>🌤️ 晴天</p>
+              <p>温度: 22°C</p>
+              <p>湿度: 65%</p>
+            </div>
           </div>
         )
       default:
